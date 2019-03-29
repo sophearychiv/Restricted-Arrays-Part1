@@ -8,7 +8,8 @@ require_relative "restricted_array.rb"
 # The restricted_array is terminated by 'nil' i.e. array[length] = nil
 # Time complexity: linear or O(n), where n is the number of items in the array
 #                                          or the length of the array
-# Space complexity: ?
+# Space complexity: O(1) because there's only one integer created no matter
+#                                           how much the array's length changes
 def length(array)
   i = 0
   while array[i] != nil
@@ -20,7 +21,8 @@ end
 # Prints each integer values in the array
 # Time complexity: linear or O(n), where n is the number of items in the array
 #                                          or the length of the array
-# Space complexity: ?
+# Space complexity: O(1) because there's only one integer created no matter
+#                                           how much the array's length changes
 def print_array(array)
   len = length(array)
   i = 0
@@ -33,8 +35,8 @@ end
 
 # For an unsorted array, searches for 'value_to_find'.
 # Returns true if found, false otherwise.
-# Time complexity: O(n) where n is the number of values in the array
-# Space complexity:
+# Time complexity: O(n) where n is the length of the array
+# Space complexity: O(1)
 def search(array, length, value_to_find)
   length.times do |i|
     return true if array[i] == value_to_find
@@ -46,7 +48,7 @@ end
 # Finds and returns the largest integer value the array
 # Assumes that the array is not sorted.
 # Time complexity: O(n) where n is the length of the array
-# Space complexity: ?
+# Space complexity: O(1)
 def find_largest(array, length)
   max = 0
   length.times do |i|
@@ -60,7 +62,7 @@ end
 # Finds and returns the smallest integer value in the array
 # Assumes that the array is not sorted.
 # Time complexity: O(n) where n is the number of length
-# Space complexity: ?
+# Space complexity: O(1)
 def find_smallest(array, length)
   min = array[0]
   length.times do |i|
@@ -71,7 +73,7 @@ end
 
 # Reverses the values in the integer array in place
 # Time complexity: O(n) where n is length / 2
-# Space complexity: ?
+# Space complexity: O(1)
 def reverse(array, length)
   i = 0
   j = length - 1
@@ -87,8 +89,8 @@ end
 
 # For an array sorted in ascending order, searches for 'value_to_find'.
 # Returns true if found, false otherwise.
-# Time complexity: ?
-# Space complexity: ?
+# Time complexity: O(log n) where n is the length of the array
+# Space complexity: O(1)
 def binary_search(array, length, value_to_find)
   low = 0
   high = length - 1
